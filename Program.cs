@@ -6,7 +6,7 @@ namespace Arrays
     {
         static void Main(string[] args)
       {
-           Array03();
+           Array05();
       }
       static void Array01()
         {
@@ -104,5 +104,43 @@ namespace Arrays
          System.Console.WriteLine("O numero não existe no array");
          }
         }
+      static void Array05()  
+       {
+        //  Leia um array A com 15 elementos, e calcule a média aritmética dos mesmos, 
+        //  em seguida, diga quantos dos elementos lidos estão abaixo, acima e na média.
+            var array = new double[15];
+            var soma = 0.0;
+            for (int i = 0; i < array.Length; i++)
+            {
+            System.Console.WriteLine("Digite um numero");
+            var numero =Double.Parse(Console.ReadLine());
+            array [i] = numero;
+            soma += numero;
+            } 
+            var media = soma/array.Length;
+            System.Console.WriteLine($"A média dos numeros é de {media}");
+            System.Console.WriteLine();
+            var maior = 0.0;
+            var igual = 0.0;
+            var menor = 0.0;
+            foreach (var item in array)
+            {
+             if (item > media)
+             {
+                 maior ++;
+             } 
+             else if (item == media)
+             {
+                 igual ++;
+             }
+             else
+             {
+                 menor ++;
+             }
+            }
+            System.Console.WriteLine($"{maior} numeros estão acima da média.");
+            System.Console.WriteLine($"{igual} numeros estão na média.");
+            System.Console.WriteLine($"{menor} numeros estão abaixo da media.");
+        }  
     }
 }
