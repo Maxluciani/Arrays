@@ -6,7 +6,7 @@ namespace Arrays
     {
         static void Main(string[] args)
       {
-           Array05();
+           Array04();
       }
       static void Array01()
         {
@@ -104,11 +104,69 @@ namespace Arrays
          System.Console.WriteLine("O numero não existe no array");
          }
         }
+         static void Array04()
+         {
+             // 4-Leia dois arrays A e B com 10 elementos. Em seguida, compare os arrays e verifique se
+            // os mesmos são iguais ou diferentes.
+            var arraya = new double?[10];
+            var arrayb = new double[10];
+            var resultado = false;
+            System.Console.WriteLine("primeira lista");
+            for (int i = 0; i < arraya.Length; i++)
+            {
+                System.Console.WriteLine($"digite o {i + 1}º numero");
+                while (true)
+                {
+                    try
+                    {
+                        arraya[i] = double.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch (System.Exception)
+                    {
+                        System.Console.WriteLine($"numero invalido,por favor tente novamente");
+                        
+                    }
+                    
+                }
+            }
+            System.Console.WriteLine("segunda lista");
+            for (int i = 0; i < arrayb.Length; i++)
+            {
+                System.Console.WriteLine($"Digite o {i + 1}º numero");
+                while (true)
+                {
+                     
+                    try
+                    {
+                        arrayb[i] = double.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch (System.Exception)
+                    {
+                        System.Console.WriteLine($"numero invalido,por favor tente novamente");
+                        
+                    }
+                }   
+            for (int k = 0; k < arraya.Length; k++)
+            {
+                resultado = false;
+                if(arraya[k] == arrayb[i])
+                {
+                  resultado = true;
+                  arraya[k] = null;
+                  break;
+                }
+            }    
+            }
+             var mensagem = (resultado) ? "Os numeros são iguais" : "Os numeros são diferentes";
+             System.Console.WriteLine(mensagem);
+        }  
       static void Array05()  
        {
         //  Leia um array A com 15 elementos, e calcule a média aritmética dos mesmos, 
         //  em seguida, diga quantos dos elementos lidos estão abaixo, acima e na média.
-            var array = new double[15];
+            var array = new double[3];
             var soma = 0.0;
             for (int i = 0; i < array.Length; i++)
             {
@@ -120,9 +178,9 @@ namespace Arrays
             var media = soma/array.Length;
             System.Console.WriteLine($"A média dos numeros é de {media}");
             System.Console.WriteLine();
-            var maior = 0.0;
-            var igual = 0.0;
-            var menor = 0.0;
+            var maior = 0;
+            var igual = 0;
+            var menor = 0;
             foreach (var item in array)
             {
              if (item > media)
@@ -141,6 +199,6 @@ namespace Arrays
             System.Console.WriteLine($"{maior} numeros estão acima da média.");
             System.Console.WriteLine($"{igual} numeros estão na média.");
             System.Console.WriteLine($"{menor} numeros estão abaixo da media.");
-        }  
+        }
     }
 }
