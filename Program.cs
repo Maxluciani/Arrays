@@ -6,7 +6,7 @@ namespace Arrays
     {
         static void Main(string[] args)
       {
-           Array04();
+           Array06();
       }
       static void Array01()
         {
@@ -199,6 +199,420 @@ namespace Arrays
             System.Console.WriteLine($"{maior} numeros estão acima da média.");
             System.Console.WriteLine($"{igual} numeros estão na média.");
             System.Console.WriteLine($"{menor} numeros estão abaixo da media.");
+        }
+        static void Array06()
+        {
+            //Leia um array A com 12 elementos. Após sua leitura, colocar os seus elementos em
+            //ordem crescente. Depois ler um array B também com doze elementos, colocar os elementos 
+            //de B em ordem decrescente. Construir um array C, onde cada elemento de C é a soma do 
+            //elemento correspondente de A com b. Colocar em ordem crescente a matriz
+            //C e apresentar os seus valores.
+            const int arraytam = 12;
+              double[] a = new double[arraytam];
+              double[] b = new double[arraytam];
+              double[] c = new double[arraytam]; 
+             for (int i = 0; i < arraytam; i++)
+             {
+                 double numero = double.MinValue;
+                 System.Console.WriteLine($"Informe o {i + 1}º numero da lista.");
+                while (true)
+                {
+                    try
+                    {
+                        numero = double.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch (System.Exception)
+                    {
+                        System.Console.WriteLine("Número inválido, digite outro valor: ");
+                    }
+                }
+
+                 if (numero > a[11])
+                 {
+                     a[0] = a[1];
+                     a[1] = a[2];
+                     a[2] = a[3];
+                     a[3] = a[4];
+                     a[4] = a[5];
+                     a[5] = a[6];
+                     a[6] = a[7];
+                     a[7] = a[8];
+                     a[8] = a[9];
+                     a[9] = a[10];
+                     a[10] = a[11];
+                     a[11] = numero;
+                 }
+                 else if(numero > a[10])
+                 {
+                     a[0] = a[1];
+                     a[1] = a[2];
+                     a[2] = a[3];
+                     a[3] = a[4];
+                     a[4] = a[5];
+                     a[5] = a[6];
+                     a[6] = a[7];
+                     a[7] = a[8];
+                     a[8] = a[9];
+                     a[9] = a[10];
+                     a[10] = numero;
+                 }
+                 else if(numero > a[9])
+                 {
+                     a[0] = a[1];
+                     a[1] = a[2];
+                     a[2] = a[3];
+                     a[3] = a[4];
+                     a[4] = a[5];
+                     a[5] = a[6];
+                     a[6] = a[7];
+                     a[7] = a[8];
+                     a[8] = a[9];
+                     a[9] = numero;
+                 }
+                 else if(numero >a[8])
+                 {
+                     a[0] = a[1];
+                     a[1] = a[2];
+                     a[2] = a[3];
+                     a[3] = a[4];
+                     a[4] = a[5];
+                     a[5] = a[6];
+                     a[6] = a[7];
+                     a[7] = a[8];
+                     a[8] = numero;
+                 }
+                 else if(numero >a[7])
+                 {
+                     a[0] = a[1];
+                     a[1] = a[2];
+                     a[2] = a[3];
+                     a[3] = a[4];
+                     a[4] = a[5];
+                     a[5] = a[6];
+                     a[6] = a[7];
+                     a[7] = numero;
+                 }
+                 else if(numero > a[6])
+                 {
+                     a[0] = a[1];
+                     a[1] = a[2];
+                     a[2] = a[3];
+                     a[3] = a[4];
+                     a[4] = a[5];
+                     a[5] = a[6];
+                     a[6] = numero;
+                 }
+                 else if(numero > a[5])
+                 {
+                     a[0] = a[1];
+                     a[1] = a[2];
+                     a[2] = a[3];
+                     a[3] = a[4];
+                     a[4] = a[5];
+                     a[5] = numero;
+                 }
+                 else if(numero >a[4])
+                 {
+                     a[0] = a[1];
+                     a[1] = a[2];
+                     a[2] = a[3];
+                     a[3] = a[4];
+                     a[4] = numero;
+                 }
+                 else if(numero >a[3])
+                 {
+                     a[0] = a[1];
+                     a[1] = a[2];
+                     a[2] = a[3];
+                     a[3] = numero;
+                 }
+                 else if(numero > a[2])
+                 {
+                     a[0] = a[1];
+                     a[1] = a[2];
+                     a[2] = numero;
+                 }
+                 else if(numero > a[1])
+                 {
+                     a[0] = a[1];
+                     a[1] = numero;
+                 }
+                 else if(numero > a[0])
+                 {
+                     a[0] = numero;
+                 }
+             }
+                 System.Console.WriteLine("Primeiro array");
+                 for (int i = 0; i < arraytam; i++)
+                 {
+                     System.Console.WriteLine(a[i]);
+                 }
+                 System.Console.WriteLine("Segundo Array");
+                 for (int i = 0; i < 12; i++)
+                 {   
+                     double numero = double.MinValue;
+                     System.Console.WriteLine($"Digite o {i +1}º numero da segunda lista.");
+                     while (true)
+                {
+                    try
+                    {
+                        numero = double.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch (System.Exception)
+                    {
+                        System.Console.WriteLine("Número inválido, digite outro valor: ");
+                    }
+                }
+
+                     if (numero < b[11])
+                     {
+                        b[0] = b[1];
+                        b[1] = b[2];
+                        b[2] = b[3];
+                        b[3] = b[4];
+                        b[4] = b[5];
+                        b[5] = b[6];
+                        b[6] = b[7];
+                        b[7] = b[8];
+                        b[8] = b[9];
+                        b[9] = b[10];
+                        b[10] = b[11];
+                        b[11] = numero;
+                     }
+                     else if (numero < b[10])
+                     {
+                         b[0] = b[1];
+                         b[1] = b[2];
+                         b[2] = b[3];
+                         b[3] = b[4];
+                         b[4] = b[5];
+                         b[5] = b[6];
+                         b[6] = b[7];
+                         b[7] = b[8];
+                         b[8] = b[9];
+                         b[9] = b[10];
+                         b[10] = numero;
+                     }
+                     else if (numero < b[9])
+                     {
+                         b[0] = b[1];
+                         b[1] = b[2];
+                         b[2] = b[3];
+                         b[3] = b[4];
+                         b[4] = b[5];
+                         b[5] = b[6];
+                         b[6] = b[7];
+                         b[7] = b[8];
+                         b[8] = b[9];
+                         b[9] = numero;
+                     }
+                     else if (numero < b[8])
+                     {
+                         b[0] = b[1];
+                         b[1] = b[2];
+                         b[2] = b[3];
+                         b[3] = b[4];
+                         b[4] = b[5];
+                         b[5] = b[6];
+                         b[6] = b[7];
+                         b[7] = b[8];
+                         b[8] = numero;
+                     }
+                     else if ( numero < b[7])
+                     {
+                         b[0] = b[1];
+                         b[1] = b[2];
+                         b[2] = b[3];
+                         b[3] = b[4];
+                         b[4] = b[5];
+                         b[5] = b[6];
+                         b[6] = b[7];
+                         b[7] = numero;
+                     }
+                     else if ( numero < b[6])
+                     {
+                         b[0] = b[1];
+                         b[1] = b[2];
+                         b[2] = b[3];
+                         b[3] = b[4];
+                         b[4] = b[5];
+                         b[5] = b[6];
+                         b[6] = numero;
+                     }
+                     else if ( numero < b[5])
+                     {
+                         b[0] = b[1];
+                         b[1] = b[2];
+                         b[2] = b[3];
+                         b[3] = b[4];
+                         b[4] = b[5];
+                         b[5] = numero;
+                     }
+                     else if ( numero < b[4])
+                     {
+                         b[0] = b[1];
+                         b[1] = b[2];
+                         b[2] = b[3];
+                         b[3] = b[4];
+                         b[4] = numero;
+                     }
+                     else if ( numero < b[3])
+                     {
+                         b[0] = b[1];
+                         b[1] = b[2];
+                         b[2] = b[3];
+                         b[3] = numero;
+                     }
+                     else if ( numero < b[2])
+                     {
+                         b[0] = b[1];
+                         b[1] = b[2];
+                         b[2] = numero;
+                     }
+                     else if ( numero < b[1])
+                     {
+                         b[0] = b[1];
+                         b[1] = numero;
+                     }
+                     else if ( numero < b[0])
+                     {
+                         b[0] = numero;
+                     }
+                 }
+                     System.Console.WriteLine("Segundo Array");
+                     for (int i = 0; i < arraytam; i++)
+                     {
+                         System.Console.WriteLine(b[i]);
+                     }
+                     for (int i = 0; i < arraytam; i++)
+                     {
+                         double numero = a[i] + b[i];
+
+                         if ( numero > c[11])
+                         {
+                            c[0] = c[1];
+                            c[1] = c[2];
+                            c[2] = c[3];
+                            c[3] = c[4];
+                            c[4] = c[5];
+                            c[5] = c[6];
+                            c[6] = c[7];
+                            c[7] = c[8];
+                            c[8] = c[9];
+                            c[9] = c[10];
+                            c[10] = c[11];
+                            c[11] = numero;
+                         }
+                         else if(numero > c[10])
+                         {
+                             c[0] = c[1];
+                             c[1] = c[2];
+                             c[2] = c[3];
+                             c[3] = c[4];
+                             c[4] = c[5];
+                             c[5] = c[6];
+                             c[6] = c[7];
+                             c[7] = c[8];
+                             c[8] = c[9];
+                             c[9] = c[10];
+                             c[10] = numero;
+                         }
+                         else if ( numero > c[9])
+                         {
+                            c[0] = c[1];
+                            c[1] = c[2];
+                            c[2] = c[3];
+                            c[3] = c[4];
+                            c[4] = c[5];
+                            c[5] = c[6];
+                            c[6] = c[7];
+                            c[7] = c[8];
+                            c[8] = c[9];
+                            c[9] = numero;
+                         }
+                         else if( numero > c[8])
+                         {
+                             c[0] = c[1];
+                             c[1] = c[2];
+                             c[2] = c[3];
+                             c[3] = c[4];
+                             c[4] = c[5];
+                             c[5] = c[6];
+                             c[6] = c[7];
+                             c[7] = c[8];
+                             c[8] = numero;
+                         }
+                         else if ( numero > c[7])
+                         {
+                             c[0] = c[1];
+                             c[1] = c[2];
+                             c[2] = c[3];
+                             c[3] = c[4];
+                             c[4] = c[5];
+                             c[5] = c[6];
+                             c[6] = c[7];
+                             c[7] = numero;
+                         }
+                         else if ( numero > c[6])
+                         {
+                             c[0] = c[1];
+                             c[1] = c[2];
+                             c[2] = c[3];
+                             c[3] = c[4];
+                             c[4] = c[5];
+                             c[5] = c[6];
+                             c[6] = numero;
+                         }
+                         else if ( numero > c[5])
+                         {
+                             c[0] = c[1];
+                             c[1] = c[2];
+                             c[2] = c[3];
+                             c[3] = c[4];
+                             c[4] = c[5];
+                             c[5] = numero;
+                         }
+                         else if ( numero > c[4])
+                         {
+                             c[0] = c[1];
+                             c[1] = c[2];
+                             c[2] = c[3];
+                             c[3] = c[4];
+                             c[4] = numero;
+                         }
+                         else if ( numero > c[3])
+                         {
+                             c[0] = c[1];
+                             c[1] = c[2];
+                             c[2] = c[3];
+                             c[3] = numero;
+                         }
+                         else if ( numero > c[2])
+                         {
+                             c[0] = c[1];
+                             c[1] = c[2];
+                             c[2] = numero;
+                         }
+                         else if ( numero > c[1])
+                         {
+                             c[0] = c[1];
+                             c[1] = numero;
+                         }
+                         else if ( numero >c[0])
+                         {
+                             c[0] = numero;
+                         }
+                     }
+                         System.Console.WriteLine("Lista de numeros do Array C");
+                         for (int i = 0; i < arraytam; i++)
+                         {
+                             System.Console.WriteLine(c[i]);
+                         }
+                        
+                         
+                         
         }
     }
 }
