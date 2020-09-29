@@ -4,10 +4,7 @@ namespace Arrays
 {
     class Program
     {
-        static void Main(string[] args)
-      {
-           Array06();
-      }
+      
       static void Array01()
         {
          //  Leia dois arrays A e B com 15 elementos. Construir um array C, onde cada 
