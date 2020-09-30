@@ -6,7 +6,7 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            ArrayLista2_02();
+            ArrayLista2_03();
         }
        static void ArrayLista2_01()
        {
@@ -76,7 +76,46 @@ namespace Arrays
          // • O número de pessoas que responderam não;
          // • A percentagem de pessoas do sexo feminino que responderam sim;
          // • A percentagem de pessoas do sexo masculino que responderam não;
+         const int entrevistados = 5;
+         (int mulheres,int sim ,int não) mulheres = (0,0,0);
+         (int homens,int sim,int não) homens = (0,0,0);
+         for (int i = 0; i < entrevistados; i++)
+         {
+             var sexo = 0;
+             var gostou = 0;
+             System.Console.WriteLine("Qual seu genero:Digite 1 para homem ou 2 para mulher");
+             sexo = Int32.Parse(Console.ReadLine());
+             System.Console.WriteLine("Você gosta do nosso produto? Digite 1 para sim ou 2 para não");
+             gostou = Int32.Parse(Console.ReadLine());
+         if (  sexo == 1)
+         {
+           homens.homens ++;
+           if (gostou ==1)
+           {
+               homens.sim++;
+           }
+           else 
+           {
+               homens.não ++;
+           }
 
+         }
+          else
+          {
+              mulheres.mulheres ++;
+              if ( gostou == 1)
+              {
+                  mulheres.sim ++;
+              }
+              else{
+                  mulheres.não ++;
+              }
+          }
+         }
+         System.Console.WriteLine($"{ mulheres.sim + homens.sim} pessoas disseram que gostam do produto ");
+         System.Console.WriteLine($" {mulheres.não + homens.não} pessoas disseram que não gostam do produto" );
+         System.Console.WriteLine($"{(mulheres.sim / mulheres.mulheres) * 100} %  das mulheres disseram que gostam do produto ");
+         System.Console.WriteLine($"{(homens.não / homens.homens) * 100} % dos homens disseram que não gostam do produto");
         }
            
            
