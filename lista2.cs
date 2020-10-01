@@ -6,7 +6,7 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            ArrayLista2_06();
+            ArrayLista2_09();
         }
        static void ArrayLista2_01()
        {
@@ -209,8 +209,60 @@ namespace Arrays
             }
             Console.WriteLine($"O maior numero da lista é {greatnumber.value} e esta na posição {greatnumber.position}.");
         }
-           
-           
+        static void ArrayLista2_07()
+        {
+            //Crie e popule um vetor A e imprima na tela o número de vezes que existe 
+           //um número residindo na mesma posição do vetor que seu valor numérico.
+           var match = 0;
+           var vontade = 0;
+           System.Console.WriteLine("Quantos numeros você quer adicionar ao vetor?");
+           vontade = Int32.Parse(Console.ReadLine());
+           var a = new double[vontade];
+           for (int i = 0; i < a.Length; i++)
+           {
+               System.Console.WriteLine($"Digite o {i+1}º numero da lista");
+               a[i] = double.Parse(Console.ReadLine());
+               if ( a[i] == i)
+               {
+                   match ++;
+               }
+           }
+               System.Console.WriteLine($" há {match} vezes em que o numero esta na mesma posição do vetor.");
+        }  
+        static void ArrayLista2_08()
+        {
+            //Crie um vetor de strings de 10 posições onde cada posição
+            //recebe uma letra do alfabeto. No final, imprima quantas destas são vogais.
+            string[] a = new string[10];
+            var count = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+              System.Console.WriteLine($"Digite a {i+1}ª letra da matriz.");
+              a[i] = Console.ReadLine().ToLower();
+              if (a[i] == "a" || a[i] == "e" || a[i] == "i" || a[i] == "o" || a[i] == "u") 
+              {
+                  count ++;
+              } 
+            }
+            System.Console.WriteLine($"{count} letras da matriz são vogais.");
+        } 
+         static void ArrayLista2_09() 
+         {
+             //Crie um vetor de strings de 10 posições onde cada posição recebe uma letra do alfabeto. 
+             //No final, imprima a string resultante da soma das strings que residem em índices pares.
+             string[] a = new string[10];
+             var palavra = "";
+             for (int i = 0; i < a.Length; i++)
+             {
+                 System.Console.WriteLine($"Digite a {i+1}ª letra.");
+                 a[i] = Console.ReadLine();
+                 if ( i %2 == 0)
+                 {
+                     palavra += a[i];
+                 }
+             }
+                 System.Console.WriteLine($"A palavra formada é {palavra}.");
+         } 
        
 
 
