@@ -6,7 +6,7 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            ArrayLista2_03();
+            ArrayLista2_06();
         }
        static void ArrayLista2_01()
        {
@@ -77,8 +77,8 @@ namespace Arrays
          // • A percentagem de pessoas do sexo feminino que responderam sim;
          // • A percentagem de pessoas do sexo masculino que responderam não;
          const int entrevistados = 5;
-         (int mulheres,int sim ,int não) mulheres = (0,0,0);
-         (int homens,int sim,int não) homens = (0,0,0);
+         (int mulheres,double sim ,double não) mulheres = (0,0,0);
+         (int homens,double sim,double não) homens = (0,0,0);
          for (int i = 0; i < entrevistados; i++)
          {
              var sexo = 0;
@@ -114,8 +114,100 @@ namespace Arrays
          }
          System.Console.WriteLine($"{ mulheres.sim + homens.sim} pessoas disseram que gostam do produto ");
          System.Console.WriteLine($" {mulheres.não + homens.não} pessoas disseram que não gostam do produto" );
+         System.Console.WriteLine();
          System.Console.WriteLine($"{(mulheres.sim / mulheres.mulheres) * 100} %  das mulheres disseram que gostam do produto ");
+         System.Console.WriteLine($"{(mulheres.não / mulheres.mulheres) * 100}% das mulheres disseram que não gostam do produto.");
+         System.Console.WriteLine();
+         System.Console.WriteLine($"{(homens.sim / homens.homens) * 100}% dos homens disseram que gostam do produto");
          System.Console.WriteLine($"{(homens.não / homens.homens) * 100} % dos homens disseram que não gostam do produto");
+        }
+        static void ArrayLista2_04()
+        {
+            //Desenvolver um programa que efetue a leitura de cinco elementos de uma matriz 
+            // A do tipo vetor. No final, apresente o total da soma de todos os elementos 
+            // que sejam impares.
+            var a  = new int [5];
+            var sum = 0.0;
+            for (int i = 0; i < 5; i++)
+            {
+                System.Console.WriteLine($"Digite o {i +1}º numero");
+                a[i] = Int32.Parse(Console.ReadLine());
+                if (a[i] % 2 == 1)
+                {
+                  sum += a[i];
+                }
+            }
+             System.Console.WriteLine($"A soma de todos os elementos impares é de {sum}");
+
+        }
+        static void ArrayLista2_05()
+        {
+            //Contar quantos valores de um vetor de 10 posições são positivos.
+            var a =new double[10];
+            var positive = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                System.Console.WriteLine($"Digite o {i+1}º numero");
+                a[i] = double.Parse(Console.ReadLine());
+                if (a[i] > 0)
+                {
+                    positive ++;
+                }
+            }
+            System.Console.WriteLine($"{positive} numeros dessa lista são positivos.");
+        }
+        static void ArrayLista2_06()
+        {
+            //Ler um vetor de 10 posições (aceitar somente números positivos). 
+            //Escrever a seguir o valor do maior elemento de Q e a respectiva posição que ele ocupa no vetor.
+            var a = new double[10];
+            var positive = 0.0;
+            (double value,int position,int flag) greatnumber = (0.0,0,0);
+            for (int i = 0; i < 10; i++)
+            {
+            System.Console.WriteLine($"Digite o {i+1}º numero da lista");
+            
+            while (true)
+            {
+               try
+               {
+                 positive = double.Parse(Console.ReadLine());
+                 if ( positive < 0)
+                 {
+                     System.Console.WriteLine("Numeros negativos não são aceitos,insira um numero positivo");
+                     continue;
+                 }
+                 else
+                 {
+                     a[i] = positive;
+                     break;
+                 }
+               }
+               catch (System.Exception)
+               {
+                   System.Console.WriteLine("Comando invalido,insira apenas numeros");
+               } 
+            }
+                  
+            }
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = 0; j < a.Length; j++)
+                {
+                    if (a[i] >a[j])
+                    {
+                        greatnumber.value = a[i];
+                        greatnumber.position = i;
+                        greatnumber.flag ++;
+                    }
+                }
+                if (greatnumber.flag == a.Length -1)
+                {
+                    break;
+                }
+                greatnumber.flag = 0;
+            }
+            Console.WriteLine($"O maior numero da lista é {greatnumber.value} e esta na posição {greatnumber.position}.");
         }
            
            
